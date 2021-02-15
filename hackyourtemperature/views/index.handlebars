@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/weather" method="post">
-        <input type="text" name="cityName">
+
+      <form action="/weather" method="POST" class="form">
+        <input type="text" name="cityName" placeholder="Enter city name..">
+         <input type="submit" value="Get weather" class="btn">
 
     </form>
-    
-</body>
-</html>
+
+
+
+    {{#if cityInput}}
+<h3> {{condition}} in {{cityInput}}</h3>
+    <p>{{weatherText}}</p>
+{{/if}}
+
+   {{#if error}}
+    <p>{{weatherText}}</p>
+{{/if}}
+

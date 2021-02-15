@@ -10,11 +10,11 @@ const drawCard = () => {
     punchLine: getRandomElement(arrays.punchlines),
   };
 
-  const card = `{{subject}} is great to {{punchLine}}`;
+  let card = `{{subject}} is great to {{punchLine}}`;
   const template = Handlebars.compile(card);
-  const compiledCard = template(cardData);
+  card = template(cardData);
 
-  console.log(compiledCard);
+  console.log(card);
 };
 
 drawCard();
