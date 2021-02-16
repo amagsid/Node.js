@@ -1,3 +1,5 @@
+//I went a for the extra mile with the project for this week since I wanted to expirement more with handlebars and serving files from the public folder.
+
 //NPM packages
 const express = require("express");
 const exhbs = require("express-handlebars");
@@ -11,12 +13,8 @@ const app = express();
 
 const API_KEY = require("../sources/keys.json");
 
-//app.use(bodyParser.json()); // to support JSON-encoded bodies
-
-app.use(express.urlencoded()); // to support URL-encoded bodies
-
-//parsing requests as JSON
-// app.use(express.json());
+//for URL-encoded bodies
+app.use(express.urlencoded());
 
 //serve static dir
 const publicDirPath = path.join(__dirname, "../public");
@@ -80,7 +78,5 @@ function isInvalidReq(req) {
     false;
   }
 }
-
-//nodemon server/server.js
 
 app.listen(3000, () => console.log("Server started"));
